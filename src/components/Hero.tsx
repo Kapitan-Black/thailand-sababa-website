@@ -1,5 +1,5 @@
 import hero from "../assets/hero.jpg";
-import hero2 from "../assets/hero2.png"
+
 
 
 const Hero = () => {

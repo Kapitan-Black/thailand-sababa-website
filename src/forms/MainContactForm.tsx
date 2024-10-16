@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
+
 
 interface FormInputs {
   user_name: string;
@@ -13,7 +13,7 @@ interface FormInputs {
  const MainContactForm = () => {
   const form = useRef<HTMLFormElement | null>(null);
   const { register, handleSubmit, reset } = useForm<FormInputs>(); // React Hook Form
-  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  // const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [isBot, setIsBot] = useState(false); // Honeypot detection
 
   // Handle reCAPTCHA change
@@ -29,7 +29,7 @@ interface FormInputs {
   };
 
   // Form submission handler
-  const onSubmit = (data: FormInputs) => {
+  const onSubmit = () => {
     // Check honeypot field
     if (isBot) {
       alert("Spam detected! Form submission blocked.");
@@ -55,7 +55,7 @@ interface FormInputs {
             console.log("SUCCESS!");
             alert("Message sent successfully!");
             reset(); // Reset form after successful submission
-            setCaptchaToken(null); // Reset reCAPTCHA
+            // setCaptchaToken(null); // Reset reCAPTCHA
           },
           (error) => {
             console.log("FAILED...", error.text);
