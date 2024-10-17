@@ -74,8 +74,8 @@ export const submitHandler = ({
       );
     }
   console.log("form.current>>>", form.current);
-       new Promise((resolve) => setTimeout(resolve, 6000));
 
+       new Promise((resolve) => setTimeout(resolve, 6000));
   
   navigate("/form-submitted");
 

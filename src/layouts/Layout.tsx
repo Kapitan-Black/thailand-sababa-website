@@ -5,10 +5,10 @@ import Hero from "@/components/Hero";
 
 type Props = {
   children: React.ReactNode;
-  showHero?: boolean;
+  // showHero?: boolean;
 };
 
-const Layout = ({ children, showHero }: Props) => {
+const Layout = ({ children }: Props) => {
   return (
     <>
 
