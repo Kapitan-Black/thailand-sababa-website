@@ -189,7 +189,7 @@ const ContactForm = () => {
       <div className="flex flex-col justify-center items-center mt-20 bg-lime-200 py-8 rounded-xl md:-mx-8">
         <div>
           <h2 className="text-2xl md:text-5xl text-center text-sky-500">
-            עזרו לנו לסייע לכם ולבנות את החופשה המושלמת עבורכם
+            עזרו לנו לעזור לכם ולבנות את החופשה המושלמת עבורכם
           </h2>
         </div>
 
