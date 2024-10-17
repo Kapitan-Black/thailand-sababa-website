@@ -5,12 +5,15 @@ import Hero from "@/components/Hero";
 
 type Props = {
   children: React.ReactNode;
+  showHero?: boolean;
 };
 
-const Layout = ({ children }: Props) => {
+const Layout = ({ children, showHero }: Props) => {
   return (
     <>
-      <Hero />
+
+      {/* {showHero && <Hero/>} */}
+      <Hero/>
       <div className="flex flex-col p-2 sm:container mx-auto flex-1 py-10">
         <Header />
       </div>

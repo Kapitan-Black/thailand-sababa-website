@@ -2,6 +2,8 @@
 import emailjs from "@emailjs/browser";
 import { UseFormReset, UseFormWatch } from "react-hook-form";
 import { signUpSchemaMain } from "./zodSchemaMain"; // Adjust the path as necessary
+import { useNavigate } from "react-router-dom";
+
 
 interface SubmitHandlerArgs {
   data: signUpSchemaMain;
@@ -9,6 +11,7 @@ interface SubmitHandlerArgs {
   reset: UseFormReset<signUpSchemaMain>;
   watch: UseFormWatch<signUpSchemaMain>;
   isBot: boolean;
+  navigate: ReturnType<typeof useNavigate>;
 }
 
 export const submitHandler = ({
@@ -16,11 +19,15 @@ export const submitHandler = ({
   form,
   reset,
   isBot,
+  navigate,
 }: SubmitHandlerArgs) => {
+
+
   if (isBot) {
     alert("Spam detected! Form submission blocked.");
     return;
   }
+
 
   if (form.current) {
     const formElement = form.current;
@@ -30,11 +37,7 @@ export const submitHandler = ({
     const emailInput = formElement.elements.namedItem("email");
     const phoneNumberInput = formElement.elements.namedItem("phoneNumber");
     const travelersInput = formElement.elements.namedItem("numberOfTravelers");
-    // const isBuyTicketElement = formElement.elements.namedItem("isBuyTicket");
-    // const numberOfAdultsInput =
-    //   formElement.elements.namedItem("numberOfAdults");
-    // const numberOfChildrenInput =
-    //   formElement.elements.namedItem("numberOfChildren");
+    
 
     // Assign values to form fields if they exist
     if (nameInput instanceof HTMLInputElement) {
@@ -49,16 +52,7 @@ export const submitHandler = ({
     if (travelersInput instanceof HTMLInputElement) {
       travelersInput.value = data.numberOfTravelers.toString() || "1";
     }
-    // if (isBuyTicketElement instanceof HTMLInputElement) {
-    //   isBuyTicketElement.value = watch("isBuyTicket") || "";
-    // }
-    // if (numberOfAdultsInput instanceof HTMLInputElement) {
-    //   numberOfAdultsInput.value = watch("numberOfAdults")?.toString() || "1";
-    // }
-    // if (numberOfChildrenInput instanceof HTMLInputElement) {
-    //   numberOfChildrenInput.value =
-    //     watch("numberOfChildren")?.toString() || "0";
-    // }
+
 
     emailjs
       .sendForm(
@@ -79,6 +73,10 @@ export const submitHandler = ({
         }
       );
     }
-    console.log("form.current>>>", form.current);
-    
+  console.log("form.current>>>", form.current);
+       new Promise((resolve) => setTimeout(resolve, 6000));
+
+  
+  navigate("/form-submitted");
+
 };

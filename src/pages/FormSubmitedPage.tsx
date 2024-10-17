@@ -5,7 +5,7 @@
 const FormSubmitedPage = () => {
     return (
         <div dir="rtl">
-        <h2>תודה רבה!</h2>
+        <h2 className="text-center text-5xl">תודה רבה!</h2>
       </div>
   )
 }

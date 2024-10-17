@@ -33,8 +33,8 @@ export const MaincontactForm = z.object({
   typeOfVacation: z.string().min(1),
   typeOfHotels: z.string().min(1),
   PlanningOptions: z.string().min(1),
-  freeText: z.string().min(1),
-
+    freeText: z.string().min(1),
+  
   website: z.string(),
 });
 

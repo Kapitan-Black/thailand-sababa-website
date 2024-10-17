@@ -160,6 +160,8 @@ import Select, { StylesConfig } from "react-select";
 import { MaincontactForm } from "./zodSchemaMain";
 import { submitHandler } from "./submitHandler";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
+
 
 type OptionType = {
   value: string;
@@ -183,8 +185,10 @@ const MainContactForm = () => {
     resolver: zodResolver(MaincontactForm),
   });
 
+  const navigate =useNavigate()
   const form = useRef<HTMLFormElement | null>(null);
   const [isBot, setIsBot] = useState(false); // Honeypot detection
+
 
   const handleHoneypot = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.value) {
@@ -209,6 +213,7 @@ const onSubmit = (data: signUpSchemaMain) => {
     reset,
     watch,
     isBot,
+    navigate,
   });
 };
 
