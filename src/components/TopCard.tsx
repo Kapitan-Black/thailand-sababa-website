@@ -17,7 +17,7 @@ const TopCard = ({ image, text, textPosition = "bottom" }: Props) => {
       <img
         src={image}
         alt="Card Image"
-        className="w-full h-[300px] md:h-full object-cover rounded-xl"
+        className="w-full h-[300px] md:h-[500px] object-cover rounded-xl"
       />
       <h3
         className={clsx(

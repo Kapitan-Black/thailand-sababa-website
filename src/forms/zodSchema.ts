@@ -18,7 +18,11 @@ const contactForm = z.object({
       })
       .min(1, { message: "מספר הנוסעים הוא שדה חובה" })
   ),
+
 });
+
+
+
  
 
-export default contactForm
+export default contactForm;

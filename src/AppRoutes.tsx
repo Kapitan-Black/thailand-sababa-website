@@ -17,7 +17,15 @@ const AppRoutes = () => {
         }
       />
       <Route
-        path="/contactForm"
+        path="/contact-form"
+        element={
+          <Layout>
+            <ContactFormPage />
+          </Layout>
+        }
+      />
+      <Route
+        path="/form-submitted"
         element={
           <Layout>
             <ContactFormPage />

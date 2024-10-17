@@ -1,6 +1,10 @@
+import MainContactForm from "@/forms/MainContactForm";
+
 const ContactFormPage = () => {
     return (
-      <div></div>
+      <div>
+        <MainContactForm/>
+      </div>
   )
 }
 

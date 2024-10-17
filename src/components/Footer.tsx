@@ -21,12 +21,12 @@ const Footer = () => {
 
         <div className="text-lg font-semibold">
           <p className="text-center">כתובתנו</p>
-          <p dir="ltr" className="text-center">
+          <p dir="ltr" className="text-center px-2">
             1000 1st FL. 40 Thong Lo Khlong Tan Nuea, Watthana, Bangkok 10110
           </p>
         </div>
         <a
-          href="mailto:contact@example.com"
+          href="/"
           className="mt-4 text-xl font-bold underline hover:text-blue-600"
         >
           השארת פרטים

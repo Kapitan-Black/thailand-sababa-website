@@ -25,7 +25,7 @@ import ContactForm from "@/forms/ContactForm";
 const HomePage = () => {
   return (
     <div dir="rtl" className="">
-      <section className="flex flex-col gap-4 mt-10">
+      <section className="flex flex-col gap-4">
         <h2 className="text-4xl md:text-5xl text-center w-[80%] mx-auto">
           תנו לנו לשבור את הראש
         </h2>
@@ -53,7 +53,7 @@ const HomePage = () => {
         />
       </div>
 
-      <section className="flex flex-col gap-4 md:gap-8 mt-16">
+      <section className="flex flex-col gap-4 md:gap-8 mt-12">
         <h2 className="text-4xl md:text-5xl text-center w-[80%] mx-auto ">
           למה כדי לסגור איתנו?
         </h2>
