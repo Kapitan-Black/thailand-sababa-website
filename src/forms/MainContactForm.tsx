@@ -160,7 +160,6 @@ import Select, { StylesConfig } from "react-select";
 import { MaincontactForm } from "./zodSchemaMain";
 import { submitHandler } from "./submitHandler";
 import { Button } from "@/components/ui/button";
-import LoadingButton from "@/components/LoadingButton";
 
 type OptionType = {
   value: string;
@@ -177,7 +176,7 @@ const MainContactForm = () => {
     register,
     handleSubmit,
     setValue,
-    formState: { errors, isSubmitting },
+    formState: { errors },
     reset,
     watch,
   } = useForm<signUpSchemaMain>({
@@ -379,7 +378,7 @@ const onSubmit = (data: signUpSchemaMain) => {
               errors.numberOfTravelers ? "border-red-500" : ""
             }`}
             placeholder="ילדים"
-            min={1}
+            min={0}
             onKeyDown={(e) => {
               if (["-", "+", "e", "E"].includes(e.key)) {
                 e.preventDefault();

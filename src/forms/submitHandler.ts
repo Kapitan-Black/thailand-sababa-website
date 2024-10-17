@@ -15,7 +15,6 @@ export const submitHandler = ({
   data,
   form,
   reset,
-  watch,
   isBot,
 }: SubmitHandlerArgs) => {
   if (isBot) {

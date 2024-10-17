@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Layout from "./layouts/Layout";
 import ContactFormPage from "./pages/ContactFormPage";
+import FormSubmitedPage from "./pages/FormSubmitedPage";
 
 
 
@@ -28,7 +29,7 @@ const AppRoutes = () => {
         path="/form-submitted"
         element={
           <Layout>
-            <ContactFormPage />
+            <FormSubmitedPage/>
           </Layout>
         }
       />

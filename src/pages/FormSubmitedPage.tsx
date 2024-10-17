@@ -1,11 +1,11 @@
-type Props = {
-  name: string
-}
+// type Props = {
+//   name: string
+// }
 
-const FormSubmitedPage = ({name}: Props) => {
+const FormSubmitedPage = () => {
     return (
         <div dir="rtl">
-             <h2>תודה רבה!</h2>
+        <h2>תודה רבה!</h2>
       </div>
   )
 }
