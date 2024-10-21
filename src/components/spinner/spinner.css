@@ -1,0 +1,47 @@
+/* .animation-container {
+  position: relative;
+  width: 100uv;
+  height: 100px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #87CEEB
+
+}
+
+.scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.tuktuk {
+  position: absolute;
+  bottom: 0px;
+  left: -100px;
+  width: 70px;
+  height: auto;
+  animation: moveTukTuk 8s linear infinite;
+}
+
+.island {
+  position: absolute;
+  right: 0px;
+  bottom: 0;
+  width: 150px;
+  height: auto;
+}
+
+
+@keyframes moveTukTuk {
+  20% {
+    left: -150px; 
+  }
+  80% {
+    left: calc(100vw - 700px); 
+  }
+  100% {
+    left: calc(100vw - 200px); 
+  }
+} */

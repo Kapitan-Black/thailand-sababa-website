@@ -151,7 +151,7 @@
 
 
 import { useRef, useState } from "react";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {  useLocation } from "react-router-dom";
 import { useEffect } from "react";
@@ -161,6 +161,8 @@ import { MaincontactForm } from "./zodSchemaMain";
 import { submitHandler } from "./submitHandler";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 
 type OptionType = {
@@ -181,14 +183,32 @@ const MainContactForm = () => {
     formState: { errors },
     reset,
     watch,
+    control,
   } = useForm<signUpSchemaMain>({
     resolver: zodResolver(MaincontactForm),
+    defaultValues: {
+      kidAge: [],
+    },
   });
 
-  const navigate =useNavigate()
+  const numberOfChildren = watch("numberOfChildren", 0); // Watch the number of children
+
+useEffect(() => {
+  const childrenCount = numberOfChildren ?? 0; // Используем 0, если numberOfChildren не определено
+
+  // Создаем массив с длиной, равной количеству детей, заполняем его значениями 0
+  const updatedKidAges = Array.from({ length: childrenCount }, () => 0);
+
+  // Обновляем поле kidAge значениями 0 для всех детей
+  setValue("kidAge", updatedKidAges);
+  }, [numberOfChildren, setValue]);
+  
+
+
+
+  const navigate = useNavigate();
   const form = useRef<HTMLFormElement | null>(null);
   const [isBot, setIsBot] = useState(false); // Honeypot detection
-
 
   const handleHoneypot = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.value) {
@@ -205,17 +225,17 @@ const MainContactForm = () => {
       setValue("numberOfTravelers", state?.numberOfTravelers || 1);
     }
   }, [state, setValue]);
-  
-const onSubmit = (data: signUpSchemaMain) => {
-  submitHandler({
-    data,
-    form,
-    reset,
-    watch,
-    isBot,
-    navigate,
-  });
-};
+
+  const onSubmit = (data: signUpSchemaMain) => {
+    submitHandler({
+      data,
+      form,
+      reset,
+      watch,
+      isBot,
+      navigate,
+    });
+  };
 
   const isBuyTicketOptions: OptionType[] = [
     { value: "כן", label: "כן" },
@@ -231,16 +251,17 @@ const onSubmit = (data: signUpSchemaMain) => {
     { value: "4", label: "4 כוכבים" },
     { value: "5", label: "5 כוכבים" },
   ];
-   const vacationPlanningOptions: OptionType[] = [
-     { value: "כן", label: "כן" },
-     { value: "לא", label: "לא" },
-   ];
+  const vacationPlanningOptions: OptionType[] = [
+    { value: "כן", label: "כן" },
+    { value: "לא", label: "לא" },
+  ];
 
-  const customStyles: StylesConfig<OptionType> = {
+  const getCustomStyles = (error: boolean): StylesConfig<OptionType> => ({
     control: (provided) => ({
       ...provided,
       backgroundColor: "blue",
       borderRadius: "0.375rem",
+      border: error ? "2px solid red" : "1px solid gray", // Apply red border if there's an error
     }),
     singleValue: (provided) => ({
       ...provided,
@@ -273,7 +294,7 @@ const onSubmit = (data: signUpSchemaMain) => {
       ...provided,
       display: "none", // Remove the separator line between the dropdown arrow and the selected value
     }),
-  };
+  });
 
   return (
     <form
@@ -282,6 +303,9 @@ const onSubmit = (data: signUpSchemaMain) => {
       onSubmit={handleSubmit(onSubmit)}
       className="max-w-2xl mx-auto bg-white shadow-lg p-8 rounded-lg"
     >
+      <h1 className="text-green-400 text-4xl font-serif text-center mb-10">
+        עוד כמה פרטים בבקשה שנוכל לבנון את החופשה שתתאים במיוחד אבורכם
+      </h1>
       <div className="flex flex-col gap-6">
         <div className="flex items-center">
           <label htmlFor="name" className="w-32 text-gray-700 font-medium">
@@ -307,7 +331,7 @@ const onSubmit = (data: signUpSchemaMain) => {
             type="email"
             id="email"
             className={`flex-1 border border-gray-300 p-2 rounded-lg ${
-              errors.email ? "border-red-500" : ""
+              errors.email ? "border-red-500" : "border-gray-300"
             }`}
             placeholder={errors.email ? errors.email.message : "Email"}
           />
@@ -365,7 +389,7 @@ const onSubmit = (data: signUpSchemaMain) => {
             type="number"
             id="numberOfAdults"
             className={`flex-1 border border-gray-300 p-2 rounded-lg ${
-              errors.numberOfTravelers ? "border-red-500" : ""
+              errors.numberOfAdults ? "border-red-500" : "border-gray-300"
             }`}
             placeholder="מבוגרים"
             min={1}
@@ -379,11 +403,10 @@ const onSubmit = (data: signUpSchemaMain) => {
             {...register("numberOfChildren")}
             type="number"
             id="numberOfChildren"
-            className={`flex-1 border border-gray-300 p-2 rounded-lg ${
-              errors.numberOfTravelers ? "border-red-500" : ""
-            }`}
+            className="flex-1 border border-gray-300 p-2 rounded-lg"
             placeholder="ילדים"
             min={0}
+            max={8}
             onKeyDown={(e) => {
               if (["-", "+", "e", "E"].includes(e.key)) {
                 e.preventDefault();
@@ -391,6 +414,37 @@ const onSubmit = (data: signUpSchemaMain) => {
             }}
           />
         </div>
+        {Array.from({ length: numberOfChildren }).map((_, index) => (
+          <div key={index} className="flex items-center">
+            <label
+              htmlFor={`kidAge-${index}`}
+              className="w-32 text-gray-700 font-medium"
+            >
+              גיל ילד {index + 1}
+            </label>
+            <input
+              {...register(`kidAge.${index}`, {
+                valueAsNumber: true,
+                required: "Age is required", // Проверка для каждого возраста
+                // setValueAs: (value) =>
+                //   value === "" || value === undefined ? 0 : value,
+              })}
+              type="number"
+              id={`kidAge-${index}`}
+              className={`flex-1 border border-gray-300 p-2 rounded-lg ${
+                errors.kidAge?.[index] ? "border-red-500" : "border-gray-300"
+              }`}
+              placeholder={`גיל ילד ${index + 1}`}
+              min={0}
+              max={18}
+              onKeyDown={(e) => {
+                if (["-", "+", "e", "E"].includes(e.key)) {
+                  e.preventDefault();
+                }
+              }}
+            />
+          </div>
+        ))}
 
         <div className="flex items-center">
           <label
@@ -403,7 +457,7 @@ const onSubmit = (data: signUpSchemaMain) => {
             id="isBuyTicket"
             name="isBuyTicket"
             options={isBuyTicketOptions}
-            styles={customStyles}
+            styles={getCustomStyles(!!errors.isBuyTicket)}
             placeholder="בחרו אפשרות"
             onChange={(selectedOption) => {
               const option = selectedOption as OptionType;
@@ -413,8 +467,50 @@ const onSubmit = (data: signUpSchemaMain) => {
         </div>
 
         <div className="flex items-center">
+          <label htmlFor="dateRange" className="w-32 text-gray-700 font-medium">
+            תאריכי חופשה
+          </label>
+          <Controller
+            control={control}
+            name="dateRange"
+            render={({ field }) => (
+              <DatePicker
+                selected={
+                  field.value?.[0] ? new Date(field.value[0]) : undefined
+                }
+                onChange={(dates) => {
+                  const [start, end] = dates as [Date | null, Date | null];
+                  field.onChange([start || undefined, end || undefined]); // Update the date range
+                }}
+                startDate={field.value?.[0]}
+                endDate={field.value?.[1]}
+                selectsRange
+                dateFormat="dd/MM/yyyy"
+                className={`flex-1 border p-2 rounded-lg ${
+                  errors.dateRange ? "border-red-500" : "border-gray-300"
+                }`}
+                placeholderText="בחרו תאריכי חופשה"
+              />
+            )}
+          />
+        </div>
+
+        {/* Hidden input for dateRange to be passed to emailjs */}
+        <input
+          type="hidden"
+          name="dateRange"
+          value={
+            watch("dateRange")
+              ? `${watch("dateRange")[0]?.toLocaleDateString()} - ${watch(
+                  "dateRange"
+                )[1]?.toLocaleDateString()}`
+              : ""
+          }
+        />
+
+        <div className="flex items-center">
           <label
-            htmlFor="isBuyTicket"
+            htmlFor="typeOfVacation"
             className="w-32 text-gray-700 font-medium"
           >
             איזו חופשה תעדיפו?
@@ -423,7 +519,7 @@ const onSubmit = (data: signUpSchemaMain) => {
             id="typeOfVacation"
             name="typeOfVacation"
             options={typeOfVacationOptions}
-            styles={customStyles}
+            styles={getCustomStyles(!!errors.typeOfVacation)}
             placeholder="בחרו אפשרות"
             onChange={(selectedOption) => {
               const option = selectedOption as OptionType;
@@ -433,16 +529,16 @@ const onSubmit = (data: signUpSchemaMain) => {
         </div>
         <div className="flex items-center">
           <label
-            htmlFor="isBuyTicket"
+            htmlFor="typeOfHotels"
             className="w-32 text-gray-700 font-medium"
           >
-            איזו חופשה תעדיפו?
+            רמת הבתי מלון?
           </label>
           <Select
             id="typeOfHotels"
             name="typeOfHotels"
             options={typeOfHotelsOptions}
-            styles={customStyles}
+            styles={getCustomStyles(!!errors.typeOfHotels)}
             placeholder="בחרו אפשרות"
             onChange={(selectedOption) => {
               const option = selectedOption as OptionType;
@@ -453,7 +549,7 @@ const onSubmit = (data: signUpSchemaMain) => {
 
         <div className="flex items-center">
           <label
-            htmlFor="isBuyTicket"
+            htmlFor="PlanningOptions"
             className="w-32 text-gray-700 font-medium"
           >
             האם יש מסלול מתוכנן?
@@ -462,7 +558,7 @@ const onSubmit = (data: signUpSchemaMain) => {
             id="PlanningOptions"
             name="PlanningOptions"
             options={vacationPlanningOptions}
-            styles={customStyles}
+            styles={getCustomStyles(!!errors.PlanningOptions)}
             placeholder="בחרו אפשרות"
             onChange={(selectedOption) => {
               const option = selectedOption as OptionType;
@@ -472,7 +568,7 @@ const onSubmit = (data: signUpSchemaMain) => {
         </div>
         <div className="flex flex-col gap-4">
           <label htmlFor="freeText" className=" text-gray-700 font-medium">
-             אם תרצו להוסיף משהו לגבי החופשה נשמח לשמוע
+            אם תרצו להוסיף משהו לגבי החופשה נשמח לשמוע
           </label>
           <textarea
             {...register("freeText")}
@@ -500,7 +596,12 @@ const onSubmit = (data: signUpSchemaMain) => {
             className="bg-blue-500 text-white font-semibold py-2 px-6 rounded-lg hover:bg-blue-600 transition duration-300"
           /> */}
 
-          <Button variant={"default"} className="text-white bg-blue-500 hover:bg-blue-700">שלח</Button>
+          <Button
+            variant={"default"}
+            className="text-white bg-blue-500 hover:bg-blue-700"
+          >
+            שלח
+          </Button>
         </div>
       </div>
     </form>

@@ -186,9 +186,9 @@ const ContactForm = () => {
 
   return (
     <div dir="rtl" className="relative ">
-      <div className="flex flex-col justify-center items-center mt-20 bg-lime-200 py-8 rounded-xl md:-mx-8">
+      <div className="flex flex-col justify-center items-center mt-20 bg-lime-200 py-8 md:-mx-56">
         <div>
-          <h2 className="text-2xl md:text-5xl text-center text-sky-500">
+          <h2 className="text-2xl md:text-5xl font-serif text-center text-sky-500">
             עזרו לנו לעזור לכם ולבנות את החופשה המושלמת עבורכם
           </h2>
         </div>
@@ -260,7 +260,7 @@ const ContactForm = () => {
                 <Button
                   variant="default"
                   size="lg"
-                  className="disabled:bg-red-300 text-lg bg-green-500 hover:bg-green-700 hover:text-white"
+                  className="disabled:bg-red-300 text-lg font-serif bg-green-500 hover:bg-green-700 hover:text-white"
                   disabled={isSubmitting}
                 >
                   שלח

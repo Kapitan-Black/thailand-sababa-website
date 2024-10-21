@@ -33,8 +33,21 @@ export const MaincontactForm = z.object({
   typeOfVacation: z.string().min(1),
   typeOfHotels: z.string().min(1),
   PlanningOptions: z.string().min(1),
-    freeText: z.string().min(1),
-  
+  freeText: z.string().optional(),
+
+  dateRange: z
+    .array(z.date(), {
+      required_error: "Date range is required",
+      invalid_type_error: "Invalid date range",
+    })
+    .length(2, { message: "Date range must include start and end date" })
+    .refine(
+      (dates) => dates[0] && dates[1], // Check that both start and end dates exist
+      { message: "Both start and end dates are required" }
+    ),
+  // kidAge: z.array(z.number().optional()).optional(),
+  kidAge: z.array(z.number().min(0).max(18)),
+
   website: z.string(),
 });
 

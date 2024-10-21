@@ -17,7 +17,7 @@ const Layout = ({ children }: Props) => {
       <div className="flex flex-col p-2 sm:container mx-auto flex-1 py-10">
         <Header />
       </div>
-      <div className="flex flex-col justify-center md:px-8">{children}</div>
+      <div className="flex flex-col justify-center md:px-8 md:mx-48">{children}</div>
 
       <Footer />
     </>
