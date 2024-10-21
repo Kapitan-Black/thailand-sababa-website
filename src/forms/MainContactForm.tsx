@@ -414,7 +414,7 @@ useEffect(() => {
             }}
           />
         </div>
-        {Array.from({ length: numberOfChildren }).map((_, index) => (
+        {Array.from({ length: numberOfChildren as number }).map((_, index) => (
           <div key={index} className="flex items-center">
             <label
               htmlFor={`kidAge-${index}`}
