@@ -3,6 +3,7 @@ import HomePage from "./pages/HomePage";
 import Layout from "./layouts/Layout";
 import ContactFormPage from "./pages/ContactFormPage";
 import FormSubmitedPage from "./pages/FormSubmitedPage";
+import ContactFormLayout from "./layouts/ContactFormLayout";
 
 
 
@@ -12,7 +13,7 @@ const AppRoutes = () => {
       <Route
         path="/"
         element={
-          <Layout>
+          <Layout showHero>
             <HomePage />
           </Layout>
         }
@@ -20,9 +21,9 @@ const AppRoutes = () => {
       <Route
         path="/contact-form"
         element={
-          <Layout>
+          <ContactFormLayout>
             <ContactFormPage />
-          </Layout>
+          </ContactFormLayout>
         }
       />
       <Route

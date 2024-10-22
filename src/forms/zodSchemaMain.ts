@@ -1,6 +1,6 @@
 import z from "zod";
 
-export const MaincontactForm = z.object({
+export const MainContactFormSchema = z.object({
   name: z.string().min(2, { message: "שם הוא שדה חובה" }),
   phoneNumber: z.preprocess(
     (val) => (val === "" ? undefined : Number(val)),
@@ -53,7 +53,7 @@ export const MaincontactForm = z.object({
 
 
 
-export type signUpSchemaMain = z.infer<typeof MaincontactForm>;
+export type signUpSchemaMain = z.infer<typeof MainContactFormSchema>;
 
 
 

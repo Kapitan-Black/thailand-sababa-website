@@ -1,10 +1,22 @@
+import { useLocation } from "react-router-dom";
 import hero from "../assets/hero.jpg";
+import { useEffect } from "react";
 
 
 
 const Hero = () => {
+   const location = useLocation();
+
+    useEffect(() => {
+      if (location.hash) {
+        const element = document.querySelector(location.hash);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    }, [location]);
   return (
-    <div dir="rtl" className="relative">
+    <div dir="rtl" className="relative" id="hero">
       <img
         src={hero}
         className="w-full h-[500px] md:h-[600px] object-cover mt-24"

@@ -24,6 +24,7 @@ import ContactForm from "@/forms/ContactForm";
 
 
 const HomePage = () => {
+  
   return (
     <div dir="rtl" className="">
       <section className="flex flex-col gap-4">
@@ -82,7 +83,7 @@ const HomePage = () => {
         />
       </div>
 
-      <h2 className="text-4xl md:text-5xl font-serif text-center w-[80%] mx-auto mt-16">
+      <h2 className="text-4xl md:text-5xl font-serif text-center w-[80%] mx-auto mt-16" id="hui">
         קצת על החלומות והיעדים
       </h2>
 

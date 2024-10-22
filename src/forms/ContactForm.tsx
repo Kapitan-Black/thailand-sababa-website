@@ -158,16 +158,27 @@ import { useForm } from "react-hook-form";
 import z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "@/components/ui/input";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import LoadingButton from "@/components/LoadingButton";
 import contactForm from "./zodSchema";
 import "react-datepicker/dist/react-datepicker.css"; // Import CSS
+import { useEffect } from "react";
 
 type signUpSchema = z.infer<typeof contactForm>;
 
 const ContactForm = () => {
   const navigate = useNavigate();
+   const location = useLocation();
+
+   useEffect(() => {
+     if (location.hash) {
+       const element = document.querySelector(location.hash);
+       if (element) {
+         element.scrollIntoView({ behavior: "smooth" });
+       }
+     }
+   }, [location]);
 
   const {
     register,
@@ -185,8 +196,8 @@ const ContactForm = () => {
   };
 
   return (
-    <div dir="rtl" className="relative ">
-      <div className="flex flex-col justify-center items-center mt-20 bg-lime-200 py-8 md:-mx-56">
+    <div dir="rtl" className="relative mb-10" id="form">
+      <div className="flex flex-col justify-center items-center mt-20 bg-lime-300 py-8 md:-mx-56">
         <div>
           <h2 className="text-2xl md:text-5xl font-serif text-center text-sky-500">
             עזרו לנו לעזור לכם ולבנות את החופשה המושלמת עבורכם

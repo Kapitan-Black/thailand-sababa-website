@@ -1,26 +1,48 @@
 import logo from "../assets/Logo.png"
-
 import { Link } from "react-router-dom";
 
-const Header = () => {
+type HeaderProps = {
+  showBackLink?: boolean; // Accept the prop
+  showContactLink?: boolean;
+};
+
+const Header = ({ showBackLink, showContactLink = true }: HeaderProps) => {
+  console.log(showContactLink)
   return (
-    <div className="border-b-4 border-b-gray-200 p-1 fixed top-0 left-0 w-full bg-white z-20 shadow-lg">
-      <div className="container mx-auto flex justify-between">
-        <Link
-          to="/contact-form"
-          className="hover:text-blue-500 flex flex-col justify-center"
-        >
-          <p className="md:text-2xl from-semibold font-serif text-center">
-            השאירו פרטים
-          </p>
-          <p className="text-sm md:text-normal font-serif text-center">
-            ונחזור אליכם עם ההצעה הטובה ביותר
-          </p>
-        </Link>
-        <Link to="/">
+    <div className=" fixed top-0 left-0 w-full bg-white z-20 shadow-lg">
+      <div
+        className={`mx-10 flex ${
+          showContactLink ? "justify-between" : "justify-end"
+        }`}
+      >
+        {showContactLink && (
+          <Link
+            to="/#form"
+            className="flex flex-col justify-center bg-green-400 hover:bg-green-500 hover:text-white px-4 my-6 rounded-lg"
+          >
+            <p className="md:text-2xl from-semibold font-serif text-center">
+              השאירו פרטים
+            </p>
+          </Link>
+        )}
+
+        {showBackLink && (
+          <Link to="/#hero" className="mt-10 text-xl">
+            חזרה לעמוד הבית
+          </Link>
+        )}
+
+        <Link to="/#hero">
           <img className="md:h-28 h-24" src={logo} alt="logo" />
         </Link>
       </div>
+      <div
+        className="absolute bottom-0 left-0 w-full h-1"
+        style={{
+          background:
+            "linear-gradient(to right, red 12.5%, yellow 12.5%, yellow 25%, green 25%, green 37.5%, orange 37.5%, orange 50%, blue 50%, blue 62.5%, yellow 62.5%, yellow 75%, green 75%, green 87.5%, orange 87.5%)",
+        }}
+      ></div>
     </div>
   );
 };

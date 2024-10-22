@@ -5,7 +5,7 @@ const Footer = () => {
     <div dir="rtl" className="relative">
       <img
         src={footer}
-        className="w-full h-[400px] md:h-[300px] object-cover mt-24 opacity-40"
+        className="w-full h-[400px] md:h-[300px] object-cover  opacity-40"
       />
 
       {/* Overlay for the footer content */}
@@ -26,7 +26,7 @@ const Footer = () => {
           </p>
         </div>
         <a
-          href="/"
+          href="/contact-form"
           className="mt-4 text-xl font-bold underline hover:text-blue-600"
         >
           השארת פרטים
