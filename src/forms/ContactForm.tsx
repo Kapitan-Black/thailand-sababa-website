@@ -271,7 +271,7 @@ const ContactForm = () => {
                 <Button
                   variant="default"
                   size="lg"
-                  className="disabled:bg-red-300 text-lg font-serif bg-green-500 hover:bg-green-700 hover:text-white"
+                  className="disabled:bg-red-300 text-lg  bg-green-500 hover:bg-green-600 hover:text-white"
                   disabled={isSubmitting}
                 >
                   שלח

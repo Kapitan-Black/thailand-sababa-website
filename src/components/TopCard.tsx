@@ -12,7 +12,7 @@ const TopCard = ({ image, text, textPosition = "bottom" }: Props) => {
     
     <div
       dir="rtl"
-      className="relative bg-white shadow-lg rounded-xl overflow-hidden w-full flex-1 md:hover:translate-y-1"
+      className="relative bg-white shadow-lg rounded-xl overflow-hidden w-full flex-1"
     >
       <img
         src={image}
@@ -38,3 +38,6 @@ const TopCard = ({ image, text, textPosition = "bottom" }: Props) => {
 };
 
 export default TopCard;
+
+
+// md: hover: translate - y - 1;
