@@ -21,7 +21,7 @@ const TopCard = ({ image, text, textPosition = "bottom" }: Props) => {
       />
       <h3
         className={clsx(
-          "card absolute left-0 right-0 px-4 py-2 text-white text-lg lg:text-2xl text-center font-semibold bg-black bg-opacity-40",
+          "card absolute left-0 right-0 px-4 py-2 text-white text-lg text-center font-semibold bg-black bg-opacity-40",
           {
             "md:top-[15%] top-1/2 transform -translate-y-1/2":
               textPosition === "top",

@@ -197,9 +197,9 @@ const ContactForm = () => {
 
   return (
     <div dir="rtl" className="relative mb-10" id="form">
-      <div className="flex flex-col justify-center items-center mt-20 bg-lime-300 py-8 md:-mx-56">
+      <div className="flex flex-col justify-center items-center mt-20 bg-lime- py-8 md:-mx-56">
         <div>
-          <h2 className="text-2xl md:text-5xl text-center text-sky-500">
+          <h2 className="text-2xl md:text-3xl text-center">
             עזרו לנו לעזור לכם ולבנות את החופשה המושלמת עבורכם
           </h2>
         </div>
