@@ -11,10 +11,10 @@ const CardTextHover = ({ image, title, hoverText }: Props) => {
         className="w-full h-full bg-cover bg-center flex flex-col justify-between"
         style={{ backgroundImage: `url(${image})` }}
       >
-        <div className="absolute top-0 w-full text-white text-4xl md:text-5xl font-serif font-extrabold text-stroke-1 p-4 text-center">
+        <div className="absolute top-0 w-full text-white text-4xl md:text-5xl p-4 text-center">
           {title}
         </div>
-        <div className="absolute bottom-0 bg-black bg-opacity-40 w-full text-white text-lg md:text-xl font-sans font-bold text-stroke-1 p-4 text-center transform translate-y-full transition-transform duration-500 group-hover:-translate-y-1/2">
+        <div className="absolute bottom-0 bg-black bg-opacity-40 w-full text-white text-lg md:text-xl p-4 text-center transform translate-y-full transition-transform duration-500 group-hover:-translate-y-1/2">
           {hoverText}
         </div>
       </div>

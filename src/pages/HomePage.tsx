@@ -23,15 +23,16 @@ import ContactForm from "@/forms/ContactForm";
 
 
 
+
 const HomePage = () => {
   
   return (
     <div dir="rtl" className="">
       <section className="flex flex-col gap-4">
-        <h2 className="text-4xl md:text-5xl text-center font-serif w-[80%] mx-auto">
+        <h2 className="text-4xl md:text-5xl text-center w-[80%] mx-auto">
           תנו לנו לשבור את הראש
         </h2>
-        <p className="text-center font-serif text-xl  md:text-2xl w-[70%] mx-auto">
+        <p className="text-center text-xl  md:text-2xl w-[70%] mx-auto">
           טיסות בינלאומיות, טיסות פנים, מעברים, מלונות, מלאאא בלאגן. תנו לנו
           לשבור את הראש.
         </p>
@@ -56,10 +57,10 @@ const HomePage = () => {
       </div>
 
       <section className="flex flex-col gap-4 md:gap-8 mt-12">
-        <h2 className="text-4xl md:text-5xl font-serif text-center w-[80%] mx-auto ">
+        <h2 className="text-4xl md:text-5xl text-center w-[80%] mx-auto ">
           למה כדי לסגור איתנו?
         </h2>
-        <p className="text-center text-xl md:text-2xl w-[70%] mx-auto font-serif">
+        <p className="text-center text-xl md:text-2xl w-[70%] mx-auto">
           תאילנד הוא יעד חלומי אך גם מורכב. אנחנו חיים ונושמים את תאילנד, עוסקים
           במקצוע הזה יום ולילה ויודעים להתאים את המסלול הנכון לכל בן אדם באשר
           הוא. אנחנו סוגרים לכם את כל הפינות- טיסות, מלונות, מעברים, אנחנו פה.
@@ -83,7 +84,7 @@ const HomePage = () => {
         />
       </div>
 
-      <h2 className="text-4xl md:text-5xl font-serif text-center w-[80%] mx-auto mt-16" id="hui">
+      <h2 className="text-4xl md:text-5xl text-center w-[80%] mx-auto mt-16" id="hui">
         קצת על החלומות והיעדים
       </h2>
 

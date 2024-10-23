@@ -13,8 +13,8 @@ const ContactFormLayout = ({ children }: Props) => {
   return (
     <>
       <div
-        className="min-h-screen bg-cover bg-center bg-no-repeat p-10"
-        style={{ backgroundImage: `url(${img})` }}
+        // className="min-h-screen bg-cover bg-center bg-no-repeat p-10"
+        // style={{ backgroundImage: `url(${img})` }}
       >
         <div className="flex flex-col p-2 sm:container mx-auto flex-1 py-10">
           <Header showContactLink={false} />
