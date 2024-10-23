@@ -34,7 +34,7 @@ const Header = ({ showBackLink, showContactLink = true }: HeaderProps) => {
         )}
 
         <Link to="/#hero">
-          <img className="w-28 md:w-56" src={logo} alt="logo" />
+          <img className="w-36 md:w-56" src={logo} alt="logo" />
         </Link>
       </div>
       {/* <div
