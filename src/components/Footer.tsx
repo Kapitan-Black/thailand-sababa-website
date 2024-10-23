@@ -5,21 +5,21 @@ const Footer = () => {
     <div dir="rtl" className="relative">
       <img
         src={footer}
-        className="w-full h-[400px] md:h-[300px] object-cover  opacity-40"
+        className="w-full h-[400px] md:h-[300px] object-cover opacity-40"
       />
 
       {/* Overlay for the footer content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <div className="flex flex-col md:flex-row md:gap-2 text-lg font-semibold">
+        <div className="flex flex-col md:flex-row md:gap-2 text-lg">
           <p className="text-center">טלפון חירום בתאילנד</p>
           <p className="text-center">6654147845+</p>
         </div>
-        <div className="flex flex-col md:flex-row md:gap-2 text-lg font-semibold">
+        <div className="flex flex-col md:flex-row md:gap-2 text-lg">
           <p className="text-center">וואטסאפ לקוחות בתאילנד</p>
           <p className="text-center">6651324874+</p>
         </div>
 
-        <div className="text-lg font-semibold">
+        <div className="text-lg">
           <p className="text-center">כתובתנו</p>
           <p dir="ltr" className="text-center px-2">
             1000 1st FL. 40 Thong Lo Khlong Tan Nuea, Watthana, Bangkok 10110
@@ -27,7 +27,7 @@ const Footer = () => {
         </div>
         <a
           href="/contact-form"
-          className="mt-4 text-xl font-bold underline hover:text-blue-600"
+          className="mt-4 text-xl font-semibold underline hover:text-blue-600"
         >
           השארת פרטים
         </a>
