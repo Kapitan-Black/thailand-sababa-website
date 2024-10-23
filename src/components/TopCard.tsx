@@ -16,7 +16,7 @@ const TopCard = ({ image, text, textPosition = "bottom" }: Props) => {
       <img
         src={image}
         alt="Card Image"
-        className="w-full h-[300px] md:h-[500px] object-cover rounded-xl transform transition-transform duration-300 group-hover:scale-105"
+        className="w-full h-[300px] md:h-[400] lg:h-[500px] object-cover rounded-xl transform transition-transform duration-300 group-hover:scale-105"
       />
       <h3
         className={clsx(

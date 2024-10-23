@@ -22,7 +22,7 @@ const Layout = ({ children, showHero }: Props) => {
           <Header showBackLink={false} />
         </div>
         <div
-          className="flex flex-col justify-center md:px-8 lg:mx-20 2xl:mx-48"
+          className="flex flex-col justify-center md:px-8 lg:mx-20 2xl:mx-52"
           id="home"
         >
           {children}

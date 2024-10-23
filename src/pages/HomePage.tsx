@@ -29,10 +29,10 @@ const HomePage = () => {
   return (
     <div dir="rtl" className="">
       <section className="flex flex-col gap-4">
-        <h2 className="text-2xl md:text-3xl text-center w-[80%] mx-auto">
+        <h2 className="text-2xl md:text-2xl text-center w-[80%] mx-auto">
           תנו לנו לשבור את הראש
         </h2>
-        <p className="text-center md:text-xl w-[70%] mx-auto">
+        <p className="text-center md:text-lg w-[70%] mx-auto">
           טיסות בינלאומיות, טיסות פנים, מעברים, מלונות, מלאאא בלאגן. תנו לנו
           לשבור את הראש.
         </p>
@@ -60,7 +60,7 @@ const HomePage = () => {
         <h2 className="text-2xl md:text-3xl text-center w-[80%] mx-auto ">
           למה כדי לסגור איתנו?
         </h2>
-        <p className="text-center md:text-xl w-[70%] mx-auto">
+        <p className="text-center md:text-lg w-[70%] mx-auto">
           תאילנד הוא יעד חלומי אך גם מורכב. אנחנו חיים ונושמים את תאילנד, עוסקים
           במקצוע הזה יום ולילה ויודעים להתאים את המסלול הנכון לכל בן אדם באשר
           הוא. אנחנו סוגרים לכם את כל הפינות- טיסות, מלונות, מעברים, אנחנו פה.
@@ -88,7 +88,7 @@ const HomePage = () => {
         קצת על החלומות והיעדים
       </h2>
 
-      <div className="flex justify-center flex-col md:flex-row gap-4 mt-16 md:px-0 px-4">
+      <div className="flex justify-center flex-col md:flex-row gap-4 lg:gap-8 mt-16 md:px-0 px-4">
         <CardTextHover
           image={kosamoi}
           title="קוסמוי"
@@ -105,7 +105,7 @@ const HomePage = () => {
           hoverText="העיר השניה בגודלה בתאילנד, מחוצה לה טבע מרהיב ביופיו, ג׳ונגלים, מפלים, שבטי הרים ועוד."
         />
       </div>
-      <div className="flex justify-center flex-col md:flex-row gap-4 mt-8 md:px-0 px-4">
+      <div className="flex justify-center flex-col md:flex-row gap-4 lg:gap-8 mt-8 md:px-0 px-4">
         <CardTextHover
           image={changmai}
           title="צ׳אנג מאי"

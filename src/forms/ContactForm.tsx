@@ -215,7 +215,7 @@ const ContactForm = () => {
                 type="text"
                 maxLength={40}
                 placeholder={errors.name ? errors.name.message : "שם"}
-                className={`px-4 py-6 rounded-xl shadow-lg shadow-green-500 bg-white placeholder:text-gray-500 lg:w-full w-[300px] ${
+                className={`px-4 py-6 rounded-xl shadow-lg shadow-gray-500 bg-white placeholder:text-gray-500 lg:w-full w-[300px] ${
                   errors.name ? "border border-red-500" : ""
                 }`}
                 title={errors.name ? errors.name.message : ""}
@@ -225,7 +225,7 @@ const ContactForm = () => {
                 type="email"
                 maxLength={40}
                 placeholder={errors.email ? errors.email.message : "אימייל"}
-                className={`px-4 py-6 rounded-xl shadow-lg shadow-green-500 bg-white placeholder:text-gray-500 lg:w-full w-[300px]${
+                className={`px-4 py-6 rounded-xl shadow-lg shadow-gray-500 bg-white placeholder:text-gray-500 lg:w-full w-[300px]${
                   errors.email ? "border border-red-500" : ""
                 }`}
                 title={errors.email ? errors.email.message : ""}
@@ -238,7 +238,7 @@ const ContactForm = () => {
                 type="number"
                 maxLength={20}
                 placeholder="מספר טלפוון"
-                className="px-4 py-6 rounded-xl shadow-lg shadow-green-500 bg-white hide-arrows placeholder:text-gray-500 lg:w-full w-[300px]"
+                className="px-4 py-6 rounded-xl shadow-lg shadow-gray-500 bg-white hide-arrows placeholder:text-gray-500 lg:w-full w-[300px]"
                 style={{
                   WebkitAppearance: "none",
                   MozAppearance: "textfield",
@@ -253,7 +253,7 @@ const ContactForm = () => {
                     ? errors.numberOfTravelers.message
                     : "מספר נוסעים"
                 }
-                className={`px-4 py-6 rounded-xl shadow-lg shadow-green-500 bg-white placeholder:text-gray-500 lg:w-full w-[300px]${
+                className={`px-4 py-6 rounded-xl shadow-lg shadow-gray-500 bg-white placeholder:text-gray-500 lg:w-full w-[300px]${
                   errors.numberOfTravelers ? "border border-red-500" : ""
                 }`}
                 onKeyDown={(e) => {
@@ -271,7 +271,7 @@ const ContactForm = () => {
                 <Button
                   variant="default"
                   size="lg"
-                  className="disabled:bg-red-300 text-lg  bg-green-500 hover:bg-green-600 hover:text-white"
+                  className="disabled:bg-red-300 text-lg  bg-gray-500 hover:bg-gray-600 text-white"
                   disabled={isSubmitting}
                 >
                   שלח

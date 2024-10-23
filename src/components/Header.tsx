@@ -18,7 +18,7 @@ const Header = ({ showBackLink, showContactLink = true }: HeaderProps) => {
         {showContactLink && (
           <Link
             to="/#form"
-            className="flex flex-col justify-center text-sm md:text-lg text-green-700  hover:text-green-800 px-4 -my-2 rounded-lg"
+            className="flex flex-col justify-center text-sm md:text-lg text-gray-700  hover:text-black px-4 -my-2 rounded-lg hover:scale-105"
           >
             <div>
               <p className="text-center">לחצו כאן</p>
@@ -34,7 +34,7 @@ const Header = ({ showBackLink, showContactLink = true }: HeaderProps) => {
         )}
 
         <Link to="/#hero">
-          <img className="w-36 md:w-56" src={logo} alt="logo" />
+          <img className="w-36 md:w-64" src={logo} alt="logo" />
         </Link>
       </div>
       {/* <div

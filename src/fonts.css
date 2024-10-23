@@ -18,7 +18,8 @@ h1 {
 
 h2 {
   /* font-family: felix007-medium; */
-  color: rgb(5, 210, 5)
+  /* color: rgb(5, 210, 5) */
+  font-weight: 600;
 }
 
 
