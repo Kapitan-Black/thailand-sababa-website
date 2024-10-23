@@ -29,7 +29,7 @@ const HomePage = () => {
   return (
     <div dir="rtl" className="">
       <section className="flex flex-col gap-4">
-        <h2 className="text-2xl md:text-2xl text-center w-[80%] mx-auto">
+        <h2 className="text-center w-[80%] mx-auto">
           תנו לנו לשבור את הראש
         </h2>
         <p className="text-center md:text-lg w-[70%] mx-auto">
@@ -57,7 +57,7 @@ const HomePage = () => {
       </div>
 
       <section className="flex flex-col gap-4 md:gap-8 mt-12">
-        <h2 className="text-2xl md:text-3xl text-center w-[80%] mx-auto ">
+        <h2 className="text-center w-[80%] mx-auto ">
           למה כדי לסגור איתנו?
         </h2>
         <p className="text-center md:text-lg w-[70%] mx-auto">
@@ -84,7 +84,7 @@ const HomePage = () => {
         />
       </div>
 
-      <h2 className="text-2xl md:text-3xl text-center w-[80%] mx-auto mt-16" id="hui">
+      <h2 className="text-center w-[80%] mx-auto mt-16" id="hui">
         קצת על החלומות והיעדים
       </h2>
 
