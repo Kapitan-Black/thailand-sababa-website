@@ -204,7 +204,7 @@ const ContactForm = () => {
           </h2>
         </div>
 
-        <div className="w-3/4 mt-8">
+        <div className="w-2/4 mt-8">
           <form
             onSubmit={handleSubmit(onSubmit)}
             className="flex flex-col gap-4 md:gap-8 w-full"

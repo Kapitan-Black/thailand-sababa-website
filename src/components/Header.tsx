@@ -11,18 +11,19 @@ const Header = ({ showBackLink, showContactLink = true }: HeaderProps) => {
   return (
     <div className="py-2 fixed top-0 left-0 w-full bg-white z-20 shadow-lg">
       <div
-        className={`mx-10 flex ${
+        className={`mx-4 lg:mx-56 flex ${
           showContactLink ? "justify-between" : "justify-end"
         }`}
       >
         {showContactLink && (
           <Link
             to="/#form"
-            className="flex flex-col text-green-700 justify-center bg-lime-300 hover:bg-lime-400 hover:text-green-800 px-4 my-6 rounded-lg"
+            className="flex flex-col justify-center text-sm md:text-lg text-green-700  hover:text-green-800 px-4 -my-2 rounded-lg"
           >
-            <p className="md:text-2xl from-semibold font-serif text-center">
-              השאירו פרטים
-            </p>
+            <div>
+              <p className="text-center">לחצו כאן</p>
+              <p className="text-center">להשארת פרטים</p>
+            </div>
           </Link>
         )}
 
@@ -33,7 +34,7 @@ const Header = ({ showBackLink, showContactLink = true }: HeaderProps) => {
         )}
 
         <Link to="/#hero">
-          <img className="md:h-28 h-24" src={logo} alt="logo" />
+          <img className="w-28 md:w-56" src={logo} alt="logo" />
         </Link>
       </div>
       {/* <div
