@@ -199,7 +199,7 @@ const ContactForm = () => {
     <div dir="rtl" className="relative mb-10" id="form">
       <div className="flex flex-col justify-center items-center mt-20 bg-lime- py-8 md:-mx-56">
         <div>
-          <h2 className="text-2xl text-center">
+          <h2 className="text-2xl text-center text-blue-500">
             עזרו לנו לעזור לכם ולבנות את החופשה המושלמת עבורכם
           </h2>
         </div>
@@ -207,7 +207,7 @@ const ContactForm = () => {
         <div className="w-2/4 mt-8">
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-col gap-4 md:gap-8 w-full"
+            className="flex flex-col gap-4 md:gap-4 w-full"
           >
             <div className="flex justify-center items-center flex-col md:flex-row gap-4">
               <Input
@@ -264,14 +264,14 @@ const ContactForm = () => {
               />
             </div>
 
-            <div className="flex justify-center items-center gap-3">
+            <div className="flex justify-center items-center">
               {isSubmitting ? (
                 <LoadingButton />
               ) : (
                 <Button
                   variant="default"
                   size="lg"
-                  className="disabled:bg-red-300 text-lg  bg-gray-500 hover:bg-gray-600 text-white"
+                  className="disabled:bg-red-300 text-lg  bg-blue-500 hover:bg-blue-600 text-white mt-6"
                   disabled={isSubmitting}
                 >
                   שלח

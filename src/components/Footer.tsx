@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import footer from "../assets/footer.png";
 
 const Footer = () => {
@@ -25,13 +26,13 @@ const Footer = () => {
             1000 1st FL. 40 Thong Lo Khlong Tan Nuea, Watthana, Bangkok 10110
           </p>
         </div>
-        <a
-          href="/contact-form"
+        <Link
+          to="/contact-form"
           className="mt-4 text-xl font-semibold underline text-center hover:text-blue-600"
         >
           <p>לחצו כאן</p>
           <p>השארת פרטים</p>
-        </a>
+        </Link>
       </div>
 
       {/* Copyright text at the bottom */}

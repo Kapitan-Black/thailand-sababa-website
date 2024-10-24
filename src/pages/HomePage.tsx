@@ -7,31 +7,26 @@ import secondCard2 from "../assets/secondCard2.jpg";
 import secondCard3 from "../assets/secondCard3.jpg";
 import secondCard4 from "../assets/secondCard4.jpg";
 
-import kosamoi from "../assets/kosamoi.jpg"
-import kopangan from "../assets/kopangan.jpg"
-import pocket from "../assets/pocket.jpg"
+import kosamoi from "../assets/kosamoi.jpg";
+import kopangan from "../assets/kopangan.jpg";
+import pocket from "../assets/pocket.jpg";
 import changmai from "../assets/changmai.jpg";
-import kofifi from "../assets/kofifi.jpg"
-import krabi from "../assets/krabi.jpg"
-
-
+import kofifi from "../assets/kofifi.jpg";
+import krabi from "../assets/krabi.jpg";
+import bangkok from "../assets/bangkok.webp";
+import pattaya from "../assets/pattaya.jpg";
+import huahin from "../assets/huahin.webp";
 
 import CardTextHover from "@/components/CardTextHover";
 import TopCard from "../components/TopCard";
 import ContactForm from "@/forms/ContactForm";
-
-
-
-
+import QuestionsAndAnswers from "@/components/QuestionsAndAnswers";
 
 const HomePage = () => {
-  
   return (
     <div dir="rtl" className="">
       <section className="flex flex-col gap-4">
-        <h2 className="text-center w-[80%] mx-auto">
-          תנו לנו לשבור את הראש
-        </h2>
+        <h2 className="text-center w-[80%] mx-auto">תנו לנו לשבור את הראש</h2>
         <p className="text-center md:text-lg w-[70%] mx-auto">
           טיסות בינלאומיות, טיסות פנים, מעברים, מלונות, מלאאא בלאגן. תנו לנו
           לשבור את הראש.
@@ -56,10 +51,8 @@ const HomePage = () => {
         />
       </div>
 
-      <section className="flex flex-col gap-4 md:gap-8 mt-12">
-        <h2 className="text-center w-[80%] mx-auto ">
-          למה כדי לסגור איתנו?
-        </h2>
+      <section className="flex flex-col gap-4 md:gap-4 mt-16">
+        <h2 className="text-center w-[80%] mx-auto ">למה כדי לסגור איתנו?</h2>
         <p className="text-center md:text-lg w-[70%] mx-auto">
           תאילנד הוא יעד חלומי אך גם מורכב. אנחנו חיים ונושמים את תאילנד, עוסקים
           במקצוע הזה יום ולילה ויודעים להתאים את המסלול הנכון לכל בן אדם באשר
@@ -88,7 +81,8 @@ const HomePage = () => {
         קצת על החלומות והיעדים
       </h2>
 
-      <div className="flex justify-center flex-col md:flex-row gap-4 lg:gap-8 mt-16 md:px-0 px-4">
+     
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8 mt-8 md:px-0 px-4">
         <CardTextHover
           image={kosamoi}
           title="קוסמוי"
@@ -104,8 +98,6 @@ const HomePage = () => {
           title="פוקט"
           hoverText="העיר השניה בגודלה בתאילנד, מחוצה לה טבע מרהיב ביופיו, ג׳ונגלים, מפלים, שבטי הרים ועוד."
         />
-      </div>
-      <div className="flex justify-center flex-col md:flex-row gap-4 lg:gap-8 mt-8 md:px-0 px-4">
         <CardTextHover
           image={changmai}
           title="צ׳אנג מאי"
@@ -121,10 +113,26 @@ const HomePage = () => {
           title="קראבי"
           hoverText="העיר השניה בגודלה בתאילנד, מחוצה לה טבע מרהיב ביופיו, ג׳ונגלים, מפלים, שבטי הרים ועוד."
         />
+        <CardTextHover
+          image={bangkok}
+          title="בנגקוק"
+          hoverText="בנגקוק, בירת תאילנד, היא עיר תוססת המשלבת מקדשים עתיקים, שווקים הומים וחיי לילה סוערים לצד גורדי שחקים מודרניים."
+        />
+        <CardTextHover
+          image={pattaya}
+          title="פטאיה"
+          hoverText="פטאיה היא עיר נופש לחוף המזרחי של תאילנד, ידועה בחופים יפים, חיי לילה סוערים, ספורט ימי ומגוון אטרקציות לתיירים כמו פארקי מים וגנים טרופיים."
+        />
+        <CardTextHover
+          image={huahin}
+          title="הואה הין"
+          hoverText="הואה הין היא עיירת חוף שלווה בתאילנד, המציעה חופים נקיים, אווירה רגועה, שווקים מקומיים, ואתרי נופש יוקרתיים, והיא יעד פופולרי למנוחה בקרב מקומיים ותיירים כאחד."
+        />
       </div>
 
       <ContactForm />
 
+      <QuestionsAndAnswers/>
     </div>
   );
 };
