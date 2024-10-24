@@ -196,7 +196,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div dir="rtl" className="relative mb-10" id="form">
+    <div dir="rtl" className="relative mb-10 bg-slate-100 rounded-xl" id="form">
       <div className="flex flex-col justify-center items-center mt-20 bg-lime- py-8 md:-mx-56">
         <div>
           <h2 className="text-2xl text-center text-blue-500">
