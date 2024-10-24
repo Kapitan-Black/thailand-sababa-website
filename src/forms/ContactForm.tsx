@@ -197,14 +197,14 @@ const ContactForm = () => {
 
   return (
     <div dir="rtl" className="relative mb-10 bg-slate-100 rounded-xl" id="form">
-      <div className="flex flex-col justify-center items-center mt-20 bg-lime- py-8 md:-mx-56">
+      <div className="flex flex-col justify-center items-center mt-20 bg-lime- py-8 ">
         <div>
-          <h2 className="text-2xl text-center text-blue-500">
+          <h2 className="text-2xl text-center ">
             עזרו לנו לעזור לכם ולבנות את החופשה המושלמת עבורכם
           </h2>
         </div>
 
-        <div className="w-2/4 mt-8">
+        <div className="w-3/4 mt-8">
           <form
             onSubmit={handleSubmit(onSubmit)}
             className="flex flex-col gap-4 md:gap-4 w-full"
@@ -264,14 +264,14 @@ const ContactForm = () => {
               />
             </div>
 
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center mt-6">
               {isSubmitting ? (
                 <LoadingButton />
               ) : (
                 <Button
                   variant="default"
                   size="lg"
-                  className="disabled:bg-red-300 text-lg  bg-blue-500 hover:bg-blue-600 text-white mt-6"
+                  className="disabled:bg-red-300 text-lg  bg-orange-500 hover:bg-orange-600 text-white"
                   disabled={isSubmitting}
                 >
                   שלח
